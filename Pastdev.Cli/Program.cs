@@ -3,7 +3,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using System;
 
-namespace Ross.Database.Migrate.Postgres
+namespace Pastdev.Cli
 {
     public class Program
     {

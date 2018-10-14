@@ -6,7 +6,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 
-namespace Ross.Database.Migrate.Postgres
+namespace Pastdev.Cli
 {
     /// <summary>
     /// A placeholder until
