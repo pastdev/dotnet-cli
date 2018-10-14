@@ -6,12 +6,19 @@ using Microsoft.Extensions.Logging;
 
 namespace Pastdev.Cli.Internal
 {
+    /// <inheritdoc/>
     internal class CliService<T> : ICliService where T : class
     {
         private ILogger logger;
         private CommandLineApplication application;
         private CliArgs args;
 
+        /// <summary>
+        /// Creates a new instance.
+        /// </summary>
+        /// <param name="logger">A logger</param>
+        /// <param name="args">The command line arguments</param>
+        /// <param name="serviceProvider">The DI service provider</param>
         public CliService(ILogger<CliService<T>> logger, CliArgs args,
             IServiceProvider serviceProvider)
         {
@@ -26,6 +33,7 @@ namespace Pastdev.Cli.Internal
                 .UseConstructorInjection(serviceProvider);
         }
 
+        /// <inheritdoc/>
         public Task<int> RunAsync(CancellationToken cancellationToken)
         {
             logger.LogDebug("Running");
