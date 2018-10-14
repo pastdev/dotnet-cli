@@ -1,0 +1,10 @@
+# Vi
+*~
+.*.swp
+
+# vscode
+.vscode
+ 
+# dotnet
+obj
+bin
