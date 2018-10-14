@@ -2,20 +2,21 @@
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using System;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace Pastdev.Cli
 {
     public class Program
     {
-        public static void Main(string[] args)
+        public static async Task<int> Main(string[] args)
         {
-            var host = new HostBuilder()
+            return await new HostBuilder()
                 .ConfigureLogging((context, builder) =>
                 {
                     builder.AddConsole();
                 })
-                .UseCommandLineApplication<Program>(args)
-                .RunConsoleAsync();
+                .RunCliAsync<Program>(args);
         }
 
         [Option(Description = "The subject")]
@@ -24,13 +25,15 @@ namespace Pastdev.Cli
         [Option(ShortName = "n")]
         public int Count { get; }
 
-        private void OnExecute()
+        private int OnExecute()
         {
             var subject = Subject ?? "world";
             for (var i = 0; i < Count; i++)
             {
+                Thread.Sleep(2000);
                 Console.WriteLine($"Hello {subject}!");
             }
+            return 3;
         }
     }
 }
