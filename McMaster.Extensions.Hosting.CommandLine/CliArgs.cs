@@ -1,4 +1,4 @@
-namespace Pastdev.Cli
+namespace McMaster.Extensions.Hosting.CommandLine
 {
     /// <summary>
     /// A DI container for storing command line arguments.

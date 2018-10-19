@@ -1,12 +1,10 @@
-using System;
-using System.Collections.Generic;
-using System.Threading;
-using System.Threading.Tasks;
-using Microsoft.Extensions.DependencyInjection;
+using McMaster.Extensions.CommandLineUtils;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using System.Threading;
+using System.Threading.Tasks;
 
-namespace Pastdev.Cli
+namespace McMaster.Extensions.Hosting.CommandLine
 {
     /// <summary>
     /// Waits from completion of the <see cref="CommandLineApplication"/> and
@@ -15,7 +13,6 @@ namespace Pastdev.Cli
     public class CliLifetime : IHostLifetime
     {
         private readonly ILogger<CliLifetime> logger;
-        private readonly IServiceProvider services;
         private readonly IApplicationLifetime applicationLifetime;
         private readonly ICliService cliService;
 
@@ -23,7 +20,7 @@ namespace Pastdev.Cli
         /// Creates a new instance.
         /// </summary>
         public CliLifetime(ILogger<CliLifetime> logger, IApplicationLifetime applicationLifetime,
-            IServiceProvider services, ICliService cliService)
+            ICliService cliService)
         {
             this.logger = logger;
             this.applicationLifetime = applicationLifetime;

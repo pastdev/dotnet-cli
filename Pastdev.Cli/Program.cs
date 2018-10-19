@@ -5,7 +5,7 @@ using System;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Pastdev.Cli
+namespace McMaster.Extensions.Hosting.CommandLine
 {
     public class Program
     {

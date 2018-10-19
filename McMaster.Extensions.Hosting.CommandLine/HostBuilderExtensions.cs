@@ -1,10 +1,10 @@
-using System.Linq;
-using System.Threading.Tasks;
+using McMaster.Extensions.CommandLineUtils;
+using McMaster.Extensions.Hosting.CommandLine.Internal;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Pastdev.Cli.Internal;
+using System.Threading.Tasks;
 
-namespace Pastdev.Cli
+namespace McMaster.Extensions.Hosting.CommandLine
 {
     /// <summary>
     /// Extension methods for <see cref="IHostBuilder"/> support.

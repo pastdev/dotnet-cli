@@ -1,7 +1,7 @@
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Pastdev.Cli
+namespace McMaster.Extensions.Hosting.CommandLine
 {
     /// <summary>
     /// A service to be run as part of the <see cref="CliLifetime"/>.
